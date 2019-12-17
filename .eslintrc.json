@@ -1,0 +1,35 @@
+{
+    "parser": "babel-eslint",
+    "extends": ["airbnb", "prettier", "prettier/react"],
+    "plugins": ["react", "prettier"],
+    "rules": {
+        "prettier/prettier": ["error"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", "jsx"] }],
+        "no-use-before-define": [
+            "error",
+            { "functions": true, "classes": true, "variables": false }
+        ],
+        "react/require-default-props": "off",
+        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [".storybook/**", "stories/**", "**/*.test.js"]
+            }
+        ],
+        "react/prop-types": ["error", { "ignore": ["children", "navigation"] }],
+        "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+    },
+    "env": {
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "./config/webpack-common-config.js"
+            }
+        }
+    }
+}
